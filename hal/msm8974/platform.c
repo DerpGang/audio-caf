@@ -375,6 +375,8 @@ static int pcm_device_table[AUDIO_USECASE_MAX][2] = {
                      {PLAYBACK_INTERACTIVE_STRM_DEVICE7, PLAYBACK_INTERACTIVE_STRM_DEVICE7},
     [USECASE_AUDIO_PLAYBACK_INTERACTIVE_STREAM8] =
                      {PLAYBACK_INTERACTIVE_STRM_DEVICE8, PLAYBACK_INTERACTIVE_STRM_DEVICE8},
+    [USECASE_AUDIO_ULTRASOUND_RX] = {ULTRASOUND_PCM_DEVICE, -1},
+    [USECASE_AUDIO_ULTRASOUND_TX] = {-1, ULTRASOUND_PCM_DEVICE},
 
 };
 
@@ -444,6 +446,7 @@ static const char * device_table[SND_DEVICE_MAX] = {
     [SND_DEVICE_OUT_SPEAKER_PROTECTED_VBAT_RAS] = "speaker-protected-vbat",
     [SND_DEVICE_OUT_SPEAKER_AND_BT_SCO] = "speaker-and-bt-sco",
     [SND_DEVICE_OUT_SPEAKER_AND_BT_SCO_WB] = "speaker-and-bt-sco-wb",
+    [SND_DEVICE_OUT_ULTRASOUND_HANDSET] = "ultrasound-handset",
 
     /* Capture sound devices */
     [SND_DEVICE_IN_HANDSET_MIC] = "handset-mic",
@@ -522,6 +525,7 @@ static const char * device_table[SND_DEVICE_MAX] = {
     [SND_DEVICE_IN_INCALL_REC_RX] = "incall-rec-rx",
     [SND_DEVICE_IN_INCALL_REC_TX] = "incall-rec-tx",
     [SND_DEVICE_IN_INCALL_REC_RX_TX] = "incall-rec-rx-tx",
+    [SND_DEVICE_IN_ULTRASOUND_MIC] = "ultrasound-mic",
 };
 
 // Platform specific backend bit width table
@@ -854,6 +858,8 @@ static struct name_to_index usecase_name_index[AUDIO_USECASE_MAX] = {
     {TO_NAME_INDEX(USECASE_AUDIO_PLAYBACK_AFE_PROXY)},
     {TO_NAME_INDEX(USECASE_AUDIO_RECORD_AFE_PROXY)},
     {TO_NAME_INDEX(USECASE_AUDIO_PLAYBACK_EXT_DISP_SILENCE)},
+    {TO_NAME_INDEX(USECASE_AUDIO_ULTRASOUND_RX)},
+    {TO_NAME_INDEX(USECASE_AUDIO_ULTRASOUND_TX)},
 };
 
 #define NO_COLS 2
