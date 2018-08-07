@@ -451,7 +451,6 @@ int offload_effects_bundle_set_hpx_state(bool hpx_state)
         }
     }
 
-exit:
     pthread_mutex_unlock(&lock);
     return ret;
 }
@@ -462,14 +461,14 @@ exit:
  * but the interface itself can be utilized for any effect.
  */
 __attribute__ ((visibility ("default")))
-void offload_effects_bundle_get_parameters(struct str_parms *query,
-                                           struct str_parms *reply)
+void offload_effects_bundle_get_parameters(struct str_parms *query __unused,
+                                           struct str_parms *reply __unused)
 {
     asphere_get_parameters(query, reply);
 }
 
 __attribute__ ((visibility ("default")))
-void offload_effects_bundle_set_parameters(struct str_parms *parms)
+void offload_effects_bundle_set_parameters(struct str_parms *parms __unused)
 {
     asphere_set_parameters(parms);
 }
