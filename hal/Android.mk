@@ -328,6 +328,8 @@ LOCAL_SHARED_LIBRARIES := \
 	libaudioroute \
 	libdl \
 	libaudioutils \
+        libhidlbase \
+        libprocessgroup \
 	libexpat
 
 LOCAL_C_INCLUDES += \
